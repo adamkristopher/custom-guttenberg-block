@@ -1,0 +1,15 @@
+{
+  "name": "auditech-consult/weather-forecast",
+  "description": "WordPress plugin for displaying weather forecasts",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "autoload": {
+    "psr-4": {
+      "AuditechConsult\\WeatherForecast\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.4",
+    "vlucas/phpdotenv": "^5.6"
+  }
+}

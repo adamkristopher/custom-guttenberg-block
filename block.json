@@ -1,0 +1,20 @@
+{
+  "apiVersion": 2,
+  "name": "auditech/weather-forecast",
+  "title": "Weather Forecast",
+  "category": "widgets",
+  "icon": "cloud",
+  "description": "Displays current weather forecast",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "location": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "weather-forecast",
+  "editorScript": "file:./build/js/block.js",
+  "style": "file:./build/css/style.css"
+}

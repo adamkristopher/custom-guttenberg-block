@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .weather-card {
+    @apply tw-bg-gradient-to-br tw-from-cloud-white tw-to-light-cloud 
+           tw-rounded-2xl tw-shadow-weather tw-p-6 tw-max-w-sm tw-w-full tw-mx-auto 
+           tw-border-t tw-border-l tw-border-white tw-backdrop-blur-sm;
+  }
+
+  .weather-header {
+    @apply tw-flex tw-flex-col tw-mb-6;
+  }
+
+  .weather-location {
+    @apply tw-text-2xl tw-font-bold tw-text-night-blue;
+  }
+
+  .weather-updated {
+    @apply tw-text-sm tw-text-gray-500 tw-mt-1;
+  }
+
+  .weather-current {
+    @apply tw-flex tw-items-center tw-justify-between tw-mb-6 tw-p-5 
+           tw-bg-white/80 tw-rounded-xl tw-shadow-sm tw-backdrop-blur-sm;
+  }
+
+  .weather-condition {
+    @apply tw-flex tw-flex-col tw-items-center;
+  }
+
+  .weather-condition-icon {
+    @apply tw-w-20 tw-h-20 tw-flex tw-items-center tw-justify-center 
+           tw-rounded-full tw-bg-gradient-to-br tw-from-sky-blue tw-to-ocean-teal;
+  }
+
+  /* Specific styling for Noun Project icons */
+  .weather-condition-icon img {
+    @apply tw-w-16 tw-h-16 tw-object-contain;
+  }
+
+  .weather-condition p {
+    @apply tw-mt-2 tw-text-night-blue tw-font-medium tw-text-center;
+  }
+
+  .weather-temp {
+    @apply tw-text-right;
+  }
+
+  .weather-temp h2 {
+    @apply tw-text-4xl tw-font-bold tw-bg-clip-text tw-text-transparent 
+           tw-bg-gradient-to-r tw-from-deep-blue tw-to-sky-blue;
+  }
+
+  .weather-temp p {
+    @apply tw-text-sm tw-text-gray-600 tw-mt-1 tw-flex tw-items-center tw-justify-end tw-gap-1;
+  }
+
+  .weather-forecast {
+    @apply tw-bg-white/80 tw-rounded-xl tw-p-5 tw-mb-6 tw-shadow-sm;
+  }
+
+  .weather-forecast h4 {
+    @apply tw-text-lg tw-font-semibold tw-text-night-blue tw-mb-3 
+           tw-flex tw-items-center tw-gap-2;
+  }
+
+  .forecast-details {
+    @apply tw-flex tw-flex-wrap tw-justify-between tw-items-center;
+  }
+
+  .forecast-high {
+    @apply tw-text-lg tw-font-bold tw-text-sunset-orange;
+  }
+
+  .forecast-low {
+    @apply tw-text-lg tw-font-medium tw-text-deep-blue;
+  }
+
+  .unit-toggle {
+    @apply tw-text-sm tw-bg-white tw-px-3 tw-py-1.5 tw-rounded-full tw-text-night-blue
+           tw-border tw-border-light-cloud tw-shadow-sm tw-font-medium
+           hover:tw-shadow-md tw-transition-all tw-duration-200 focus:tw-outline-none
+           focus:tw-ring-2 focus:tw-ring-sky-blue;
+  }
+
+  .unit-toggle.active {
+    @apply tw-bg-sky-blue tw-text-white tw-border-sky-blue;
+  }
+
+  .weather-refresh-btn {
+    @apply tw-bg-gradient-to-r tw-from-sky-blue tw-to-ocean-teal tw-text-white 
+           tw-px-4 tw-py-3 tw-rounded-xl tw-font-medium tw-shadow-sm
+           hover:tw-shadow-md hover:tw-translate-y-[-2px] tw-transition-all tw-duration-200
+           tw-flex tw-justify-center tw-items-center tw-gap-2
+           focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-sky-blue;
+  }
+
+  .weather-loading,
+  .weather-error {
+    @apply tw-text-center tw-py-12 tw-px-6 tw-bg-cloud-white 
+           tw-rounded-2xl tw-shadow-weather tw-flex tw-flex-col tw-items-center;
+  }
+
+  .weather-location-error {
+    @apply tw-text-red-500 tw-text-sm tw-mt-2;
+  }
+
+  .weather-location-note {
+    @apply tw-text-gray-500 tw-text-xs tw-mt-1;
+  }
+
+  .error-icon {
+    @apply tw-text-red-500 tw-w-16 tw-h-16 tw-mb-4;
+  }
+
+  .forecast-icon {
+    @apply tw-text-soft-purple tw-w-5 tw-h-5;
+  }
+
+  /* Attribution styling for Noun Project credits */
+  .noun-project-attribution {
+    @apply tw-text-xs tw-text-center tw-mt-4 tw-text-gray-500 tw-opacity-70
+           hover:tw-opacity-100 tw-transition-opacity;
+  }
+}
+
+/* Additional traditional CSS for non-Tailwind styling */
+.weather-widget {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+}
+
+.weather-forecast-container {
+  display: block;
+  min-height: 100px;
+}
+
+/* Animation for loading spinner */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-icon {
+  animation: spin 1.5s linear infinite;
+}
+
+/* Animation for weather data */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Staggered animations for sections */
+.weather-header {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.weather-current {
+  animation: fadeIn 0.5s ease forwards;
+  animation-delay: 0.1s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.weather-forecast {
+  animation: fadeIn 0.5s ease forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.weather-refresh-btn {
+  animation: fadeIn 0.5s ease forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* Tooltip for icon attribution */
+[title] {
+  position: relative;
+  cursor: help;
+}
+
+[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 10;
+  opacity: 0;
+  animation: fadeIn 0.3s ease forwards;
+}

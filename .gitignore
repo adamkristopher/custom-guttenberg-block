@@ -1,0 +1,92 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.directory
+
+# Environment Files
+.env
+.env.*
+!.env.example
+
+# Editor/IDE Files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.editorconfig
+.project
+.settings/
+*.swp
+*.swo
+.vs/
+*.code-workspace
+
+# Dependency Directories
+/node_modules/
+/vendor/
+/bower_components/
+
+# Build Files
+/build/js/*
+/build/css/*
+!build/js/.gitkeep
+!build/css/.gitkeep
+/dist/
+*.zip
+*.tar.gz
+
+# Compiled Source
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# WordPress Specific
+.htaccess
+wp-config.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/wp-cache-config.php
+wp-content/plugins/hello.php
+
+# WP-CLI
+wp-cli.local.yml
+
+# Composer
+composer.phar
+
+# API Keys and Credentials
+api-keys.php
+credentials.json
+
+# Plugin Specific
+/weather-forecast.zip
+api-tests/
