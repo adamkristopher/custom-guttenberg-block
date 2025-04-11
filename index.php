@@ -14,7 +14,16 @@ if (!defined('WPINC')) {
 }
 
 // Load Composer autoloader
-require_once __DIR__ . '/vendor/autoload.php';
+$autoloader = __DIR__ . '/vendor/autoload.php';
+if (file_exists($autoloader)) {
+    require_once $autoloader;
+} else {
+    // Log error or display admin notice
+    add_action('admin_notices', function() {
+        echo '<div class="error"><p>Weather Forecast Block: Composer dependencies missing. Please run <code>composer install</code> or contact the plugin author.</p></div>';
+    });
+    return; // Prevent plugin from initializing
+}
 
 // Load environment variables from .env file if it exists
 if (file_exists(__DIR__ . '/.env')) {
